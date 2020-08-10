@@ -4,7 +4,9 @@
   "description": "Production ready boilerplate for node graphql mongo redis application",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "build": "babel src -d dist",
+    "start": "npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/Akhilesh-pilkhwal/node-graphql-mongo-redis-boilerplate/issues"
   },
-  "homepage": "https://github.com/Akhilesh-pilkhwal/node-graphql-mongo-redis-boilerplate#readme"
+  "homepage": "https://github.com/Akhilesh-pilkhwal/node-graphql-mongo-redis-boilerplate#readme",
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "apollo-server": "^2.16.1",
+    "graphql": "^15.3.0",
+    "lodash": "^4.17.19"
+  }
 }
