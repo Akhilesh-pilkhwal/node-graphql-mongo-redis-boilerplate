@@ -1,0 +1,13 @@
+{
+    "globals": {
+        "fetch": false
+    },
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        //Add rules here that no longer required
+    },
+    "parser": "babel-eslint"
+}
