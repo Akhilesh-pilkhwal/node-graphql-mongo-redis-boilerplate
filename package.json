@@ -1,0 +1,27 @@
+{
+  "name": "graphql-mongo-redis-boilerplate",
+  "version": "1.0.0",
+  "description": "Production ready boilerplate for node graphql mongo redis application",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhilesh-pilkhwal/node-graphql-mongo-redis-boilerplate.git"
+  },
+  "keywords": [
+    "Graphql",
+    "nodejs",
+    "mongodb",
+    "passportjs",
+    "redis",
+    "apollo"
+  ],
+  "author": "Akhilesh singh pilkhwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akhilesh-pilkhwal/node-graphql-mongo-redis-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Akhilesh-pilkhwal/node-graphql-mongo-redis-boilerplate#readme"
+}
