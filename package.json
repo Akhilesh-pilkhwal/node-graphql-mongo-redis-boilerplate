@@ -7,7 +7,8 @@
     "test": "npm run test",
     "lint": "node_modules/.bin/eslint src --fix",
     "build": "babel src -d dist",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "start:dev": "nodemon --exec babel-node --inspect=9984 src/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "apollo-server": "^2.16.1",
     "graphql": "^15.3.0",
@@ -38,6 +40,6 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.6.0",
-    "eslint-config-airbnb": "^18.2.0"
+    "nodemon": "^2.0.4"
   }
 }
