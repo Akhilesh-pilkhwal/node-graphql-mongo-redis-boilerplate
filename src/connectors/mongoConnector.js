@@ -1,10 +1,10 @@
 import { MongoClient } from 'mongodb';
-import { MONGO_URL } from '../config';
+import { MONGO_URL, DB_NAME } from '../config';
 
 module.exports = async () => {
-  const db = await MongoClient.connect(MONGO_URL, {
+  const client = await MongoClient.connect(MONGO_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
-  return db;
+  return client.db(DB_NAME);
 }

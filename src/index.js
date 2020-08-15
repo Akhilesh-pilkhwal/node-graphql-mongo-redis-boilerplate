@@ -15,7 +15,7 @@ const start = async () => {
   const server = new ApolloServer({
     typeDefs, resolvers,
     context: (req) => ({
-      ...getContext({ db, redisClient, req })
+      ...getContext({ db, client, req })
     }),
   });
 

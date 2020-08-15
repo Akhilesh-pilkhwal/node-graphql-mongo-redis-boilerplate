@@ -10,8 +10,8 @@ export const getContext = ({ db, redisClient, req = null }) => {
       redis,
     },
     models: {
-      Book: new Book(db),
-      Author: new Author(db)
+      Book: new Book({ db }),
+      Author: new Author({ db })
     }
   }
 }
