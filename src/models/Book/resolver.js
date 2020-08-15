@@ -6,11 +6,11 @@ export default {
       .models.Book.getById(id),
   },
   Mutation: {
-    bookAdd: (_, book, context) => context
+    bookAdd: (_, { book }, context) => context
       .models.Book.bookAdd(book),
-    bookUpdate: (_, book, context) => context
+    bookUpdate: (_, { book }, context) => context
       .models.Book.bookUpdate(book),
-    bookDelete: (_, book, context) => context
-      .models.Book.bookDelete(book),
+    bookDelete: (_, { id }, context) => context
+      .models.Book.bookDelete(id),
   }
 };

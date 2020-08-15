@@ -2,25 +2,26 @@ import { getUniqueId } from '../../utils';
 
 export default class Book {
   constructor({ db }) {
-    console.log('db', db)
     this.db = db;
-    this.collectionName = 'books' 
+    this.collectionName = 'books'
   }
 
   async getById(id) {
-    return this.db
+    return await this.db
       .collection(this.collectionName)
       .findOne({
         id,
-        deleted: false
+        $or: [
+          { deleted: { $exists: false } },
+          { deleted: false }
+        ]
       });
   }
 
   async getBooks() {
-    console.log(this.db);
     const books = await this.db
       .collection(this.collectionName)
-      .find({ deleted: false })
+      .find({})
       .toArray();
     return books;
   }
