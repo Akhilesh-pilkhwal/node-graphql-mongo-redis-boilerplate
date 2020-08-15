@@ -18,6 +18,15 @@ export default class Book {
       });
   }
 
+  async getByIdArray(ids) {
+    return await this.db
+      .collection(this.collectionName)
+      .find({
+        id: { $in: ids }
+      })
+      .toArray();
+  }
+
   async getBooks() {
     const books = await this.db
       .collection(this.collectionName)

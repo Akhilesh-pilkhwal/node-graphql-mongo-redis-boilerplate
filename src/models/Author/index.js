@@ -21,7 +21,12 @@ export default class Author {
   async getAuthors() {
     const Authors = await this.db
       .collection(this.collectionName)
-      .find({ deleted: false })
+      .find({
+        $or: [
+          { deleted: { $exists: false } },
+          { deleted: false }
+        ]
+      })
       .toArray();
     return Authors;
   }
