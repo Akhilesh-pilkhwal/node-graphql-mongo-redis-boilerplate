@@ -1,16 +1,16 @@
-const authors = [
-  {
-    name: 'J.K. Rowling',
-    email: 'abc@gmail.com',
-  },
-  {
-    name: 'Michael Crichton',
-    email: 'abc@gmail.com'
-  },
-];
-
 export default {
   Query: {
-    authors: () => authors,
+    authors: (_, _1, context) => context
+      .models.Author.getAuthors(),
+    author: (_, { id }, context) => context
+      .models.Author.getById(id),
   },
+  Mutation: {
+    authorAdd: (_, { author }, context) => context
+      .models.Author.authorAdd(author),
+    authorUpdate: (_, { author }, context) => context
+      .models.Author.authorUpdate(author),
+    authorDelete: (_, { id }, context) => context
+      .models.Author.authorDelete(id),
+  }
 };

@@ -3,7 +3,7 @@ import { getUniqueId } from '../../utils';
 export default class Author {
   constructor({ db }) {
     this.db = db;
-    this.collectionName = 'authors' 
+    this.collectionName = 'authors'
   }
 
   async getById(id) {
@@ -11,7 +11,10 @@ export default class Author {
       .collection(this.collectionName)
       .findOne({
         id,
-        deleted: false
+        $or: [
+          { deleted: { $exists: false } },
+          { deleted: false }
+        ]
       });
   }
 

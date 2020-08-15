@@ -1,4 +1,8 @@
 export default {
+  Book: {
+    author: ({ author }, _, context) => context
+      .models.Author.getById(author),
+  },
   Query: {
     books: (_, _1, context) => context
       .models.Book.getBooks(),

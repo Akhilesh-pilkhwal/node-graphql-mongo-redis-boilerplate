@@ -4,7 +4,7 @@ const BookSchema = gql`
 type Book {
     id: String
     title: String
-    author: String
+    author: Author
 }
 
 input bookInput {
